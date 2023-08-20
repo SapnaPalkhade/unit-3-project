@@ -48,7 +48,13 @@ require('dotenv').config();
 
 require('./config/database');
 
+const path = require('path');
+
+const favicon = require('serve-favicon');
+
 const app = require('./app-server');
+
+app.use(favicon(path.join(__dirname, 'public', 'img','as-logo.png')))
 
 const PORT = process.env.PORT || 8001;
 
